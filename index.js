@@ -142,11 +142,13 @@ const ScrollableTabView = createReactClass({
       }
     }
 
-    const currentPage = this.state.currentPage;
-    this.updateSceneKeys({
-      page: pageNumber,
-      callback: this._onChangeTab.bind(this, currentPage, pageNumber),
-    });
+    setTimeout(() => {
+			const currentPage = this.state.currentPage;
+			this.updateSceneKeys({
+				page: pageNumber,
+				callback: this._onChangeTab.bind(this, currentPage, pageNumber)
+			});
+		}, 500);
   },
 
   renderTabBar(props) {
